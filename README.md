@@ -55,6 +55,49 @@ load a configuration from the GUI or using the `-c` command line argument. See
 Tutorials and howtos are being written and published on the website
 https://gqrx.dk/
 
+```
+Rob,
+
+I don't wish to insult your intelligence, but I need to provide
+certain amount of details to properly explain how tuning in gqrx
+works.
+
+I have attached a screenshot with numerical indicators to make sure it
+is clear which widgets I am talking about.
+
+Receiver frequency (1, 4, 6) = hardware frequency (2, 5) + filter offset (3)
+
+Changing the receiver frequency using (1, 4) changes the hardware
+frequency (2, 5) but leaves the filter offset (3) unchanged. The above
+equation still applies.
+
+The easiest way to change the hardware frequency (2, 5) to a specific
+value is to first reset the filter offset (3, 6) to 0, then tune the
+receiver frequency using (1, 4).
+
+To tune within the sampled bandwidth without changing the hardware
+frequency (2), i.e. websdr mode, do one of the following:
+
+1. Click on the signal on the spectrum
+2. Use the mouse wheel on the spectrum (except on the axes)
+3. Change the filter offset using the mouse on the filter offset digits (3)
+4. Drag the red receiver frequency indicator (6) to the desired signal
+on the spectrum
+
+When you do this, the receive frequency (1, 4) will update. I think
+this works pretty much as websdr, i.e. click on a signal, then use the
+mouse wheel to fine tune.
+
+If you change the receive frequency using (1, 4) it will in turn
+change the hardware frequency (2). It will leave the filter offset (3)
+as is.
+
+I understand it would be convenient to have a checkbox to lock the
+hardware frequency.
+```
+
+![img](https://06816143288477446433.googlegroups.com/attach/1cca4e9a200e6/screenshot_010.png?part=0.1&view=1&vt=ANaJVrFEf-EJsKWrPa5IoB6Ms2QW6bMOiyPsABLcQPcBbYzAwisr137EvnWFefO_DXVeABEJrICO7h38wv4_WrBsh5CM-qoBHy-tvaFnmJinuwQcePRMfxg)
+
 
 Known problems
 --------------
